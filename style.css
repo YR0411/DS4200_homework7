@@ -1,0 +1,236 @@
+/* ==========================================================
+   Flour & Fire: custom stylesheet
+   1. Typography  2. Color scheme  3. Spacing & layout
+   ========================================================== */
+
+:root {
+  /* Color scheme: bakery tile teal, butter yellow, crust brown */
+  --tile: #1f5c5a;
+  --tile-dark: #153f3e;
+  --butter: #f2c94c;
+  --crust: #8a4b22;
+  --ink: #1b2a2f;
+  --flour: #f6f8f7;
+  --paper: #ffffff;
+  --line: #d5dedb;
+
+  /* Typography */
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--flour);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- Layout ---------- */
+.wrap {
+  width: min(1100px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, .brand, .nav-list a, .button {
+  font-family: var(--font-display);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  color: var(--tile-dark);
+}
+
+/* Smaller than the home page h1 */
+h2.page-heading {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+  color: var(--tile-dark);
+}
+
+h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--tile-dark);
+}
+
+p { margin: 0 0 1.15rem; max-width: 62ch; }
+
+a { color: var(--crust); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--tile); }
+
+:focus-visible {
+  outline: 3px solid var(--butter);
+  outline-offset: 3px;
+}
+
+/* ---------- Header & navigation ---------- */
+.site-header {
+  background: var(--tile);
+  border-bottom: 6px solid var(--butter);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-block: 1rem;
+}
+
+.brand {
+  color: var(--flour);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.brand:hover { color: var(--butter); }
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--flour);
+  font-weight: 500;
+  text-decoration: none;
+  padding-block: 0.25rem;
+  border-bottom: 3px solid transparent;
+}
+.nav-list a:hover { border-bottom-color: var(--butter); color: var(--flour); }
+.nav-list a[aria-current="page"] { border-bottom-color: var(--butter); font-weight: 700; }
+
+/* ---------- Home page ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+/* The arch frame: shaped like a bakery window */
+.hero-figure { margin: 0; position: sticky; top: 2rem; }
+.hero-figure img {
+  width: 100%;
+  border-radius: 999px 999px 12px 12px;
+  border: 6px solid var(--tile);
+  background: var(--butter);
+}
+.hero-figure figcaption,
+.notebook-figure figcaption {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  color: var(--tile-dark);
+}
+
+.button {
+  display: inline-block;
+  background: var(--tile);
+  color: var(--flour);
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border-bottom: 4px solid var(--tile-dark);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.button:hover { background: var(--crust); border-bottom-color: #5e3216; color: var(--flour); }
+.button:active { transform: translateY(2px); }
+
+/* ---------- Notebook page ---------- */
+.notebook { padding-block: clamp(2.5rem, 5vw, 4rem); }
+
+.notebook-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.notebook-figure { margin: 0; }
+.notebook-figure img {
+  border-radius: 12px;
+  border: 6px solid var(--tile);
+  background: var(--butter);
+}
+
+.chart-section,
+.favorites {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-left: 10px solid var(--butter);
+  border-radius: 6px;
+}
+.chart-note { font-size: 0.95rem; margin-bottom: 1rem; }
+
+.chart { width: 100%; overflow-x: auto; }
+.chart svg { width: 100%; height: auto; display: block; }
+
+.fav-list { padding-left: 1.5rem; margin: 0.75rem 0 0; }
+.fav-list li { margin-bottom: 0.6rem; padding-left: 0.25rem; }
+.fav-list li::marker { color: var(--crust); font-family: var(--font-display); font-weight: 800; }
+
+/* ---------- Footer / contact ---------- */
+.site-footer {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  background: var(--tile-dark);
+  color: var(--flour);
+  padding-block: 2.5rem;
+  border-top: 6px solid var(--butter);
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: var(--butter);
+}
+.site-footer p { margin: 0; }
+.contact-list { list-style: none; margin: 0; padding: 0; }
+.contact-list li { margin-bottom: 0.4rem; }
+.site-footer a { color: var(--flour); }
+.site-footer a:hover { color: var(--butter); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .hero,
+  .notebook-intro { grid-template-columns: 1fr; }
+  .hero-figure { position: static; max-width: 340px; order: -1; }
+  .notebook-figure { max-width: 380px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}

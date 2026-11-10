@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What I've Made | Flour &amp; Fire</title>
+  <meta name="description" content="Desserts and dishes I've made, a chart of what I cook, and a list of favorites.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Flour &amp; Fire</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dishes.html" aria-current="page">What I've Made</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap notebook">
+
+    <section class="notebook-intro">
+      <div class="notebook-text">
+        <h2 class="page-heading">What I've Made</h2>
+
+        <p>I personally don't keep a recipe book or write down specific notes. My process is simple. I watch a recipe video on YouTube (due to the algorithm), and save the video if it looks good. Then, when I get hungry, I go make it. If it turns out well, 
+          I might make it again. If it doesn't, I try to figure out what went wrong and do better next time.</p>
+
+        <p>I make both desserts and savory meals. Desserts are a big part of what I do, because I like how much work goes into getting the texture right. A cheesecake 
+          can crack or turn out too dense, and cookies can come out flat, dry, or hard as a rock. Getting them right feels like a win. For regular meals, I like to try ideas that mix different 
+          flavors, like turning the flavors of yakisoba into a pasta dish.</p>
+
+        <p>The chart below shows roughly how many times I've made each type of food. It is just an estimate, since I don't keep track, but it gives a general idea of what I like 
+          to cook. Some of these I make over and over, and others I only try once because I'm always looking for something new.</p>
+
+        <p>Below the chart is a list of some of the dishes I've made and a short description of each one. I plan to keep adding to it as I try more recipes, and I'm always open 
+          to ideas for what to make next.</p>
+      </div>
+
+      <figure class="notebook-figure">
+        <img src="images/mixing-bowl.svg" alt="Illustration of a mixing bowl with a wooden spoon, two eggs, and a plate of cookies.">
+        <figcaption>Mixing bowl, eggs, and cookies: where it all starts.</figcaption>
+      </figure>
+    </section>
+
+    <section class="chart-section" aria-labelledby="chart-title">
+      <h3 id="chart-title">What I make</h3>
+      <p class="chart-note">Rough number of times I've made each kind of food.</p>
+      <div id="chart" class="chart" role="img" aria-label="Horizontal bar chart of how many times I made each kind of food: cookies 8, other dinners 7, other desserts 6, cheesecakes 5, pasta dishes 14."></div>
+    </section>
+
+    <section class="favorites" aria-labelledby="fav-title">
+      <h3 id="fav-title">Dishes I've made</h3>
+      <ol class="fav-list">
+        <li><strong>Brown butter chocolate chip cookies:</strong> chocolate chip cookies made with browned butter for a nutty flavor.</li>
+        <li><strong>Basque cheesecake:</strong> a crustless cheesecake with a dark, caramelized top and a creamy middle.</li>
+        <li><strong>New York style cheesecake:</strong> a classic, dense and creamy cheesecake.</li>
+        <li><strong>Yakisoba inspired pasta:</strong> pasta made with the sweet and savory flavors of yakisoba.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-inner">
+      <div>
+        <h2 class="footer-title">Contact</h2>
+        <p>Have a question or a recipe idea? Send me an email.</p>
+      </div>
+      <ul class="contact-list">
+        <li><a href="mailto:ryu.yu@northeastern.edu">ryu.yu@northeastern.edu</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="js/chart.js"></script>
+</body>
+</html>
